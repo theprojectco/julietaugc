@@ -407,6 +407,76 @@
     .contacto-form textarea { height: 125px; resize: none; }
     .contacto-form ::placeholder { color: rgba(140,125,120,0.5); }
 
+
+    .form-nota { font-size: 0.78rem; color: rgba(140,125,120,0.6); font-style: italic; text-align: center; margin-top: 1rem; }
+    .wa-wrap { display: flex; flex-direction: column; gap: 1.2rem; justify-content: center; }
+    .wa-text { font-size: 0.95rem; color: var(--warm-gray); line-height: 1.8; font-weight: 300; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 0.85rem;
+      padding: 1.1rem 2.4rem;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+      transition: all 0.3s;
+      align-self: flex-start;
+    }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.25); }
+    .wa-hint { font-size: 0.78rem; color: rgba(140,125,120,0.7); font-style: italic; }
+    .wa-hint span { color: var(--rose); }
+
+    /* ── PROCESO ── */
+    #proceso {
+      background: var(--cream);
+      padding: 7rem 6rem;
+      position: relative;
+    }
+    .proceso-steps {
+      margin-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .proceso-step {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: start;
+      gap: 2rem;
+      padding: 2.2rem 0;
+      border-bottom: 1px solid rgba(201,123,106,0.12);
+      transition: background 0.3s;
+    }
+    .proceso-step:first-child { border-top: 1px solid rgba(201,123,106,0.12); }
+    .proceso-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: rgba(201,123,106,0.25);
+      font-style: italic;
+      line-height: 1;
+      padding-top: 0.2rem;
+    }
+    .proceso-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .proceso-content p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 600px;
+    }
+    .proceso-dia {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+      white-space: nowrap;
+      padding-top: 0.35rem;
+      font-weight: 500;
+    }
     /* ── FOOTER ── */
     footer { background: var(--charcoal); color: rgba(255,255,255,0.32); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.05em; }
     footer a { color: var(--dusty); text-decoration: none; }
@@ -472,6 +542,7 @@
   <a href="#" class="nav-logo">Julieta Estrada</a>
   <ul class="nav-links">
     <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#proceso">Proceso</a></li>
     <li><a href="#marcas">Marcas</a></li>
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#galeria">Galería</a></li>
@@ -539,6 +610,47 @@
   <div class="info-item"><span class="info-item-dot"></span>Facturación disponible + IVA</div>
 </div>
 
+
+<!-- PROCESO -->
+<section id="proceso">
+  <p class="section-label">Proceso</p>
+  <h2 class="section-title">Así es como <em>trabajamos</em></h2>
+  <div class="proceso-steps">
+    <div class="proceso-step">
+      <span class="proceso-num">01</span>
+      <div class="proceso-content">
+        <h3>Brief & Alineación</h3>
+        <p>Me compartes objetivo, referencias y lineamientos del contenido para asegurar que estemos alineados antes de grabar.</p>
+      </div>
+      <span class="proceso-dia">Día 1</span>
+    </div>
+    <div class="proceso-step">
+      <span class="proceso-num">02</span>
+      <div class="proceso-content">
+        <h3>Propuesta de guión</h3>
+        <p>Con base en el brief, desarrollo la propuesta de hook y guión para aprobación previa a grabación.</p>
+      </div>
+      <span class="proceso-dia">Día 1–2</span>
+    </div>
+    <div class="proceso-step">
+      <span class="proceso-num">03</span>
+      <div class="proceso-content">
+        <h3>Producción profesional</h3>
+        <p>Grabación con equipo profesional (Osmo Pocket 3 + micrófonos DJI). Edición completa con música, textos en pantalla y subtítulos.</p>
+      </div>
+      <span class="proceso-dia">Día 2–3</span>
+    </div>
+    <div class="proceso-step">
+      <span class="proceso-num">04</span>
+      <div class="proceso-content">
+        <h3>Entrega & Revisiones</h3>
+        <p>Archivos listos para publicación en alta resolución. Incluye 2 rondas de ajustes sin costo.</p>
+      </div>
+      <span class="proceso-dia">Día 3–4</span>
+    </div>
+  </div>
+</section>
+
 <!-- MARCAS -->
 <section id="marcas">
   <p class="section-label">Experiencia</p>
@@ -575,9 +687,9 @@
         <ul class="tarifa-items">
           <li>Video vertical (TikTok / Reels / YouTube Shorts)</li>
           <li>Grabación con equipo profesional</li>
+          <li>1 propuesta de guión</li>
           <li>Edición básica incluida (cortes, música, texto en pantalla y subtítulos)</li>
           <li>2 rondas de ajustes sin costo</li>
-          <li>Entrega en formato optimizado para cada plataforma</li>
         </ul>
         <div class="tarifa-note">Extras opcionales: Guión por mi parte <strong style="color:var(--dusty)">$300 MXN</strong> &nbsp;·&nbsp; Hook adicional <strong style="color:var(--dusty)">$500 MXN</strong></div>
       </div>
@@ -693,7 +805,7 @@
       <h2 class="section-title">¿Trabajamos en tu próxima <em>campaña</em>?</h2>
       <p>Si tu marca busca contenido auténtico y bien producido para redes o campañas, escríbeme. Estoy disponible para colaboraciones y campañas.</p>
       <div class="contact-links">
-        <a href="mailto:julietaestradapersonal&#64;gmail&#46;com" class="contact-link">
+        <a href="/cdn-cgi/l/email-protection#e68c938a8f83928783959294878287968394958988878ac0c5d0d2dd818b878f8ac0c5d2d0dd85898b" class="contact-link">
           <span class="contact-link-icon">✉</span>
           julietaestradapersonal&#64;gmail&#46;com
         </a>
@@ -709,12 +821,13 @@
         </a>
       </div>
     </div>
-    <form class="contacto-form" onsubmit="return false;">
-      <input type="text" placeholder="Tu nombre"/>
-      <input type="text" placeholder="Nombre de tu marca"/>
-      <input type="email" placeholder="Tu correo"/>
-      <textarea placeholder="Cuéntame sobre tu proyecto…"></textarea>
+    <form class="contacto-form" action="https://formspree.io/f/mykdngay" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required/>
+      <input type="text" name="marca" placeholder="Nombre de tu marca" required/>
+      <input type="email" name="email" placeholder="Tu correo" required/>
+      <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto…" required></textarea>
       <button type="submit" class="btn-primary" style="width:100%;text-align:center;cursor:pointer;border:2px solid var(--rose);">Enviar mensaje</button>
+      <p class="form-nota">Te respondo a la brevedad ✨</p>
     </form>
   </div>
 </section>
@@ -722,10 +835,4 @@
 <!-- FOOTER -->
 <footer>
   <span>© 2025 Julieta Estrada<span class="fdot">·</span>UGC Creator<span class="fdot">·</span>Guadalajara, MX</span>
-  <a href="https://www.tiktok.com/@julietaest_?lang=es" target="_blank">@julietaest_</a>
-</footer>
-
-</footer>
-
-</body>
-</html>
+  <a href="https://www.tiktok.com/@julietaest_?lang=es" target=
