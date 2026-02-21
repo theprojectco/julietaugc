@@ -503,9 +503,11 @@
       .nav-links a { font-size: 0.68rem; letter-spacing: 0.08em; }
 
       /* HERO */
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { display: none; }
-      .hero-left { padding: 7rem 1.5rem 4rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; display: flex; flex-direction: column; }
+      .hero-right { display: block; height: 55vw; max-height: 320px; order: -1; margin-top: 64px; }
+      .hero-right img { object-position: center 15%; }
+      .hero-accent-bar { height: 100%; width: 4px; }
+      .hero-left { padding: 2rem 1.5rem 4rem; }
       .hero-title { font-size: clamp(2.8rem, 11vw, 4rem); }
       .hero-subtitle { font-size: 0.92rem; max-width: 100%; }
       .hero-left::after { display: none; }
