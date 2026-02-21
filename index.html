@@ -308,7 +308,7 @@
     .tab-panel { }
     .tarifa-layout { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
     .tarifa-photo { width: 260px; flex-shrink: 0; position: relative; }
-    .tarifa-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; }
+    .tarifa-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 20%; display: block; }
     .tarifa-photo-badge {
       position: absolute; bottom: 1.2rem; left: -0.8rem;
       background: var(--rose); color: white;
@@ -483,26 +483,109 @@
     .fdot { color: var(--rose); margin: 0 0.45rem; }
 
     /* ── MOBILE ── */
-    @media (max-width: 900px) {
+    /* ── TABLET ── */
+    @media (max-width: 1024px) {
+      nav { padding: 1rem 2rem; }
+      .hero-left { padding: 8rem 3rem 5rem; }
+      #about, #marcas, #tarifas, #galeria, #contacto, #proceso { padding: 5rem 3rem; }
+      .info-strip { padding: 1.4rem 3rem; }
+      footer { padding: 2rem 3rem; }
+      .tarifa-layout { grid-template-columns: 1fr 200px; gap: 2rem; }
+      .tarifa-photo { width: 200px; }
+      .paquetes-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      /* NAV */
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1rem; }
-      .hero { grid-template-columns: 1fr; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.68rem; letter-spacing: 0.08em; }
+
+      /* HERO */
+      .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-right { display: none; }
-      .hero-left { padding: 7rem 2rem 4rem; }
-      #about { padding: 5rem 2rem; }
-      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-      #marcas, #tarifas, #galeria { padding: 5rem 2rem; }
-      #contacto { padding: 5rem 2rem; }
-      .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .brands-grid { grid-template-columns: repeat(2, 1fr); }
-      .paquetes-grid { grid-template-columns: 1fr; }
-      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-      .tarifa-layout { grid-template-columns: 1fr; }
-      .tarifa-photo { width: 100%; max-width: 240px; }
-      footer { flex-direction: column; gap: 0.7rem; text-align: center; padding: 1.5rem 2rem; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
-      .info-strip { padding: 1.3rem 2rem; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .hero-left { padding: 7rem 1.5rem 4rem; }
+      .hero-title { font-size: clamp(2.8rem, 11vw, 4rem); }
+      .hero-subtitle { font-size: 0.92rem; max-width: 100%; }
+      .hero-left::after { display: none; }
+
+      /* ABOUT */
+      #about { padding: 4rem 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photos { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+      .photo-col img { max-height: 280px; object-fit: cover; }
+      .about-tag { right: 0; font-size: 0.6rem; padding: 0.4rem 0.7rem; }
+      .about-accent-corner { display: none; }
+      .about-text p { font-size: 0.92rem; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-label { font-size: 0.62rem; }
+      .equip-badge { padding: 0.85rem 1rem; }
+      .equip-text { font-size: 0.78rem; }
+
+      /* INFO STRIP */
+      .info-strip { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.6rem; justify-content: flex-start; }
       .info-sep { display: none; }
+      .info-item { font-size: 0.78rem; padding: 0; }
+
+      /* PROCESO */
+      #proceso { padding: 4rem 1.5rem; }
+      .proceso-step { grid-template-columns: 50px 1fr; gap: 1rem; padding: 1.6rem 0; }
+      .proceso-dia { display: none; }
+      .proceso-num { font-size: 1.6rem; }
+      .proceso-content h3 { font-size: 1rem; }
+      .proceso-content p { font-size: 0.83rem; }
+
+      /* MARCAS */
+      #marcas { padding: 4rem 1.5rem; }
+      #marcas::before { display: none; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin-top: 2.5rem; }
+      .brand-name { font-size: 1rem; }
+      .brand-card { padding: 1.4rem 1rem; }
+
+      /* TARIFAS */
+      #tarifas { padding: 4rem 1.5rem; }
+      .tarifas-tabs { margin: 2rem 0 1.5rem; overflow-x: auto; }
+      .tab-btn { padding: 0.75rem 1.3rem; font-size: 0.68rem; white-space: nowrap; }
+      .tarifa-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+      .tarifa-photo { display: none; }
+      .tarifa-card { padding: 1.8rem 1.5rem; }
+      .tarifa-price { font-size: 2.1rem; }
+      .tarifa-items li { font-size: 0.83rem; }
+      .paquetes-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .paquete-card { padding: 1.8rem 1.5rem; }
+      .paquete-price { font-size: 1.7rem; }
+      .paquetes-footer { flex-direction: column; gap: 0.5rem; }
+
+      /* GALERIA */
+      #galeria { padding: 4rem 1.5rem; }
+      .galeria-inner { max-width: 100%; }
+      .btn-portafolio { font-size: 0.72rem; padding: 0.9rem 1.5rem; }
+
+      /* CONTACTO */
+      #contacto { padding: 4rem 1.5rem; }
+      .contacto-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contacto-form input, .contacto-form textarea { font-size: 0.88rem; padding: 0.85rem 1rem; }
+
+      /* SECTION TITLES */
+      .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+      .section-label { font-size: 0.65rem; }
+
+      /* FOOTER */
+      footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 1.5rem 1.5rem; font-size: 0.7rem; }
+    }
+
+    /* ── SMALL MOBILE (iPhone SE, etc) ── */
+    @media (max-width: 390px) {
+      .nav-links { gap: 0.7rem; }
+      .nav-links a { font-size: 0.62rem; }
+      .hero-title { font-size: 2.5rem; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .stat-num { font-size: 1.2rem; }
+      .tarifa-card { padding: 1.4rem 1.2rem; }
+      .tab-btn { padding: 0.65rem 1rem; font-size: 0.63rem; }
     }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -687,7 +770,6 @@
         <ul class="tarifa-items">
           <li>Video vertical (TikTok / Reels / YouTube Shorts)</li>
           <li>Grabación con equipo profesional</li>
-          <li>1 propuesta de guión</li>
           <li>Edición básica incluida (cortes, música, texto en pantalla y subtítulos)</li>
           <li>2 rondas de ajustes sin costo</li>
         </ul>
